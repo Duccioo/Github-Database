@@ -13,6 +13,5 @@ jobs:
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v3
         with:
-          context: .
           push: true
           tags: duccioo/github-database-telegrambot:raspberrypi, duccioo/github-database-telegrambot:${{ github.run_number}}
