@@ -11,12 +11,6 @@ jobs:
       DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}  
       DOCKER_TARGET_PLATFORM: linux/arm/v7    
     steps:
-      - name: Checkout code
-        uses: action/checkout@v1
-
-      - name: Checkout the code       
-        uses: actions/checkout@v1   
-
       - name: Set up Docker Buildx      
         uses: crazy-max/ghaction-docker-buildx@v1      
         with:        
