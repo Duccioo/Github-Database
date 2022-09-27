@@ -3,7 +3,7 @@ on: push
 jobs:
   build-container:
     name: Build container
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:      
      
       DOCKER_IMAGE: duccioo/github-database-telegrambot:raspberrypi   
