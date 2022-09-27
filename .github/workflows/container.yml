@@ -12,3 +12,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN}}
+      - name: Build and push to Docker Hub
+      uses: docker/build-push-action@v3
+        with:
+          context .
+          push: true
+          tags: duccioo/github-database-telegrambot:raspberrypi, docker pull duccioo/github-database-telegrambot:${{ github.run_number}}
