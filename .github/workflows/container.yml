@@ -5,12 +5,17 @@ jobs:
     name: Build container
     runs-on: ubuntu-latest
     env:      
+    
      
       DOCKER_IMAGE: duccioo/github-database-telegrambot
       DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}  
       DOCKER_TARGET_PLATFORM: linux/arm/v7    
     steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Set up Docker Buildx      
         uses: crazy-max/ghaction-docker-buildx@v1      
         with:        
